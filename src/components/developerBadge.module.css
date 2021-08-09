@@ -1,7 +1,7 @@
 .badgeWrapper {
   position: fixed;
-  bottom: 120px;
-  right: 40px;
+  /* bottom: 120px; */
+  top: 72vh;
   z-index: 200;
   mix-blend-mode: difference;
 }

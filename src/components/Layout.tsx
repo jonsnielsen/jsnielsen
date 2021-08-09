@@ -31,42 +31,46 @@ export function Layout({ children }: LayoutProps) {
       {/* padding under header to make content go down */}
       <div style={{ height: '85px' }} />
       <main>{children}</main>
-      <footer className="bg-background-600 py-20 px-20 flex gap-x-20">
-        <p className="max-w-md">
-          Feel free to reach out if you have any questions or just want to say
-          hello!
-        </p>
-        <div>
-          <h3 className="text-base font-normal mb-4">Contact</h3>
-          <ul className="text-base">
-            <li>jonathan.sparvath@gmail.com</li>
-            <li>+45 81 75 53 45</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-base font-normal mb-4">Social</h3>
-          <ul className="text-base">
-            <li>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/in/jsparvath/"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/jonsnielsen"
-              >
-                Github
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
+      <div className="bg-background-600">
+        <footer className="content-section pt-20 pb-40 flex gap-x-20 flex-col md:flex-row justify-between">
+          <p className="max-w-md mb-12 md:mb-0">
+            Feel free to reach out if you have any questions or just want to say
+            hello!
+          </p>
+          <div className="flex gap-x-12 gap-y-10 flex-col lg:flex-row">
+            <div style={{ width: 'fit-content' }}>
+              <h3 className="text-base font-normal mb-4">Contact</h3>
+              <ul className="text-base">
+                <li>jonathan.sparvath@gmail.com</li>
+                <li>+45 81 75 53 45</li>
+              </ul>
+            </div>
+            <div style={{ width: 'fit-content' }}>
+              <h3 className="text-base font-normal mb-4">Social</h3>
+              <ul className="text-base">
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/in/jsparvath/"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://github.com/jonsnielsen"
+                  >
+                    Github
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
     </>
   );
 }

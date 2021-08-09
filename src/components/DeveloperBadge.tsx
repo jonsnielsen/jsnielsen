@@ -19,11 +19,11 @@ export function DeveloperBadge() {
   return (
     <motion.span
       style={{ rotateZ: rotateAnim, transformOrigin: '50% 50%' }}
-      className={styles.badgeWrapper}
+      className={`${styles.badgeWrapper} right-4 sm:right-8 lg:right-10`}
     >
       {/* <Image src={badgeSvg} alt="developer badge" width={120} height={120} /> */}
       <svg
-        className="w-20 h-20 lg:w-32 lg:h-32"
+        className="w-24 h-24 lg:w-32 lg:h-32"
         width="145"
         height="145"
         viewBox="0 0 145 145"

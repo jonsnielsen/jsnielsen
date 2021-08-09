@@ -3,25 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @apply text-xl-400 font-bold lg:text-xl; */
 @layer components {
   h1,
   .h1 {
-    @apply text-xl-400 font-bold lg:text-xl;
+    @apply font-bold;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-family: 'Plus Jakarta Sans';
     line-height: 1.2;
   }
+
   h2,
   .h2 {
-    @apply text-xl-400 font-bold;
+    @apply font-bold;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
     font-family: 'Plus Jakarta Sans';
   }
+
   h3,
   .h3 {
     @apply text-lg font-bold;
     font-family: 'Plus Jakarta Sans';
   }
-  p,
+
   div,
+  p,
   .base {
     @apply text-base font-normal;
     font-family: 'Plus Jakarta Sans';
@@ -29,6 +35,16 @@
 
   .content-section {
     @apply max-w-xxl mx-auto px-4 sm:px-8 lg:px-20;
+  }
+
+  .services-grid {
+    @apply max-w-6xl mx-auto grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-2 gap-y-20 lg:gap-y-32;
+    display: grid;
+    column-gap: clamp(30px, 8vw, 200px);
+    /* row-gap: 100px; */
+    width: fit-content;
+
+    /* ggap-y-32 gap-x-60 */
   }
 }
 
@@ -53,6 +69,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     @apply bg-background;
+    overflow-x: hidden;
   }
   body {
     /* background: white; */

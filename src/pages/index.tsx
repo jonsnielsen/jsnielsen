@@ -34,11 +34,11 @@ export default function Home() {
         </ul>
       </section>
       <section className="mt-12 mb-40 content-section">
-        <h2 className="mb-40">Services</h2>
-        <ul className="grid grid-cols-2 grid-rows-2 gap-y-8 gap-x-52 max-w-6xl mx-auto">
+        <h2 className="mb-40">Services ↓</h2>
+        <ul className="services-grid">
           {services.map((service) => (
-            <li key={service.title}>
-              <h3 className="">{service.title}</h3>
+            <li className="max-w-xl" key={service.title}>
+              <h3 className="mb-4 lg:mb-12">{service.title}</h3>
               <p>{service.description}</p>
             </li>
           ))}
@@ -111,8 +111,6 @@ function Seperator() {
     <div
       style={{
         border: '1px solid black',
-        marginLeft: '-80px',
-        marginRight: '-80px',
       }}
     ></div>
   );

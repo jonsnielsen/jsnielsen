@@ -19,7 +19,7 @@ module.exports = {
     fontSize: {
       'sm': '1.1rem',
       'base-400': '1.5rem', // 24px
-      'base': '1.45rem', // 26px
+      'base': '1.35rem', // 26px
       'lg': '2.65rem',
       'xl': '5.50rem',
       'xl-400': '3.5rem',
@@ -32,8 +32,9 @@ module.exports = {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
-      // 'md': '768px',
+      'md': '768px',
       // => @media (min-width: 768px) { ... }
+      'workItemBreakpoint': '900px',
 
       'lg': '1024px',
       // => @media (min-width: 1024px) { ... }
