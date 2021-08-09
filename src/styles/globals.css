@@ -1,12 +1,36 @@
 /* ./styles/globals.css */
 @tailwind base;
-/* @layer components {
-  .pill {
-    @apply inline-block bg-gray-200 m-1 uppercase text-xs tracking-widest text-gray-600 font-bold rounded-full px-3 py-2 hover:bg-gray-300 transition-colors duration-200 ease-in;
-  }
-} */
-@tailwind utilities;
 @tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1,
+  .h1 {
+    @apply text-xl-400 font-bold lg:text-xl;
+    font-family: 'Plus Jakarta Sans';
+    line-height: 1.2;
+  }
+  h2,
+  .h2 {
+    @apply text-xl-400 font-bold;
+    font-family: 'Plus Jakarta Sans';
+  }
+  h3,
+  .h3 {
+    @apply text-lg font-bold;
+    font-family: 'Plus Jakarta Sans';
+  }
+  p,
+  div,
+  .base {
+    @apply text-base font-normal;
+    font-family: 'Plus Jakarta Sans';
+  }
+
+  .content-section {
+    @apply max-w-xxl mx-auto px-4 sm:px-8 lg:px-20;
+  }
+}
 
 @layer base {
   @font-face {
@@ -32,27 +56,6 @@
   }
   body {
     /* background: white; */
-    @apply bg-background;
-  }
-  h1 {
-    @apply text-xl;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  h2 {
-    @apply text-xl-400;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 600;
-  }
-  h3 {
-    @apply text-lg;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 600;
-  }
-  p {
-    @apply text-base;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 400;
+    @apply bg-background font-normal;
   }
 }

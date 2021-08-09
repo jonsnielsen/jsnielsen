@@ -9,19 +9,19 @@ import rakatXImage from '../assets/images/rakatx.png';
 export default function Home() {
   return (
     <Layout>
-      <section className="mt-90 mb-60">
-        <h1 className="">
-          Freelance frontend developer based in Copenhagen building immersive{' '}
-          <span className="text-primary">digital</span> experiences.
+      <section className="mt-40 xl:mt-90 mb-60 content-section">
+        <h1>
+          Freelance frontend developer based in Copenhagen building immersive
+          digital experiences.
         </h1>
       </section>
       <section>
-        <h2 className="mb-8">Selected work ↓</h2>
+        <h2 className="mb-8 content-section">Selected work ↓</h2>
         <ul>
           {workItems.map((workItem, index) => (
             <>
               <Seperator />
-              <li className="my-20" key={workItem.title}>
+              <li className="my-20 content-section" key={workItem.title}>
                 <WorkItem
                   title={workItem.title}
                   description={workItem.description}
@@ -33,12 +33,12 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <section className="mt-12 mb-40">
+      <section className="mt-12 mb-40 content-section">
         <h2 className="mb-40">Services</h2>
         <ul className="grid grid-cols-2 grid-rows-2 gap-y-8 gap-x-52 max-w-6xl mx-auto">
           {services.map((service) => (
             <li key={service.title}>
-              <h3 className="text-lg">{service.title}</h3>
+              <h3 className="">{service.title}</h3>
               <p>{service.description}</p>
             </li>
           ))}
