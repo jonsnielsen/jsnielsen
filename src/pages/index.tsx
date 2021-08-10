@@ -4,6 +4,7 @@ import { Layout } from '../components/Layout';
 import { WorkItem, WorkItemProps } from '../components/WorkItem';
 import soundboksImage from '../assets/images/soundboks.png';
 import jonasElsgaardImage from '../assets/images/jonaselsgaard.png';
+// import jonasElsgaardVideo from '../assets/images/jonaselsgaard.mp4';
 import rakatXImage from '../assets/images/rakatx.png';
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
                   title={workItem.title}
                   description={workItem.description}
                   image={workItem.image}
+                  video={workItem.video}
                 />
               </li>
               {index === workItems.length - 1 && <Seperator />}
@@ -50,21 +52,25 @@ export default function Home() {
 
 const workItems: WorkItemProps[] = [
   {
-    title: 'Soundboks',
-    description:
-      'Frontend developer on the amazing digital team at SOUNDBOKS.  Main responsibilities included working on the webshop and on the  mobile app.',
-    image: {
-      alt: 'soundboks website',
-      src: soundboksImage,
-    },
-  },
-  {
     title: 'Jonas Elsgaard',
     description:
       'Website implementation, design and headless CMS for the talented animator Jonas Elsgaard.',
     image: {
       alt: "jonas elsgaard's website",
       src: jonasElsgaardImage,
+    },
+    video: {
+      // src: jonasElsgaardVideo,
+      src: '/videos/jonaselsgaard.mp4',
+    },
+  },
+  {
+    title: 'Soundboks',
+    description:
+      'Frontend developer on the amazing digital team at SOUNDBOKS.  Main responsibilities included working on the webshop and on the  mobile app.',
+    image: {
+      alt: 'soundboks website',
+      src: soundboksImage,
     },
   },
   {
