@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Video, VideoProps } from './Video';
 // 732 / 500 = 1.464
 // 815 / x = 1.464
 // x = 815 / 1.464 = 556
@@ -11,9 +12,7 @@ export type WorkItemProps = {
     src: StaticImageData;
     alt: string;
   };
-  video?: {
-    src: string;
-  };
+  video?: VideoProps;
   title: string;
   description: string;
 };
@@ -31,18 +30,12 @@ export function WorkItem({ image, title, description, video }: WorkItemProps) {
           <Image src={image.src} alt={image.alt} layout="responsive" sizes="" />
         )}
         {video && (
-          <video
-            muted
-            playsInline
-            preload="metadata"
-            loop
-            disablePictureInPicture
-            disableRemotePlayback
-            autoPlay
-            controls={false}
-          >
-            <source type="video/mp4" src={video.src} />
-          </video>
+          <Video
+            src={video.src}
+            aspectHeight={video.aspectHeight}
+            aspectWidth={video.aspectWidth}
+            backgroundColor={video.backgroundColor}
+          />
         )}
       </div>
     </div>

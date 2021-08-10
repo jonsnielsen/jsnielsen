@@ -62,15 +62,24 @@ const workItems: WorkItemProps[] = [
     video: {
       // src: jonasElsgaardVideo,
       src: '/videos/jonaselsgaard.mp4',
+      aspectHeight: 1114,
+      aspectWidth: 1644,
+      backgroundColor: '#EFEEEF',
     },
   },
   {
     title: 'Soundboks',
     description:
-      'Frontend developer on the amazing digital team at SOUNDBOKS.  Main responsibilities included working on the webshop and on the  mobile app.',
+      'I worked as frontent developer between 2020 and 2021 on the amazing digital team at SOUNDBOKS. My main responsibilities included the webshop and on the mobile app.',
     image: {
       alt: 'soundboks website',
       src: soundboksImage,
+    },
+    video: {
+      backgroundColor: '#E8542F',
+      src: '/videos/soundboks-ultra.mp4',
+      aspectWidth: 1654,
+      aspectHeight: 1228,
     },
   },
   {
