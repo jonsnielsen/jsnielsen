@@ -9,7 +9,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <>
       <DeveloperBadge />
-      <header className="bg-background flex justify-between items-center fixed w-full py-3 px-10 z-10">
+      <header className="bg-background flex justify-between items-center fixed w-full py-3 px-4 sm:px-10 z-10">
         <div>
           <Link passHref href="/">
             <a style={{ fontSize: '24px', lineHeight: 1.3 }}>
