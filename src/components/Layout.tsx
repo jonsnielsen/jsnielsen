@@ -1,35 +1,46 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { DeveloperBadge } from './DeveloperBadge';
+import { useRouter } from 'next/router';
 
 type LayoutProps = {
   children: ReactNode;
 };
 export function Layout({ children }: LayoutProps) {
+  const router = useRouter();
+
   return (
     <>
       <DeveloperBadge />
-      <header className="bg-background flex justify-between items-center fixed w-full py-3 px-4 sm:px-10 z-10">
-        <div>
+      <header className="">
+        <div className="flex h-24 justify-between items-center fixed w-full z-10 content-section pr-42 tiny:pr-48 sm:pr-46 md:pr-60 text-white mix-blend-difference">
           <Link passHref href="/">
-            <a style={{ fontSize: '24px', lineHeight: 1.3 }}>
-              Jonathan <br /> S. Nielsen
+            <a className="text-sm font-medium">
+              <span className="hidden tiny:block">
+                Jonathan <br className="block sm:hidden" />
+                S. Nielsen
+              </span>
             </a>
           </Link>
+          <nav className="-mr-1 md:-mr-0">
+            <ul className="flex gap-8">
+              <li className="text-sm font-medium">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="text-sm font-medium">
+                <Link href="/about">About</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <ul className="flex gap-8">
-            <li className="text-sm font-bold">
-              <Link href="/">WORK</Link>
-            </li>
-            <li className="text-sm font-bold">
-              <Link href="/about">ABOUT</Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="fixed flex items-center h-24 z-10 top-0 right-0  content-section">
+          <a className="mt-1 button" href="mailto:jonathan.sparvath@gmail.com">
+            Write me
+          </a>
+        </div>
       </header>
       {/* padding under header to make content go down */}
-      <div style={{ height: '85px' }} />
+      <div className="h-24" />
       <main>{children}</main>
       <div className="bg-background-600">
         <footer className="content-section pt-20 pb-40 flex gap-x-20 flex-col md:flex-row justify-between">

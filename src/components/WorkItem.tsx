@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import { AnimatedImageOverlay } from './AnimatedImageOverlay';
+import { AnimatedText } from './AnimatedText';
+import { AnimatedTextFadeIn } from './AnimatedTextFadeIn';
+import { AnimatedTextPop } from './AnimatedTextPop';
 import { Video, VideoProps } from './Video';
 // 732 / 500 = 1.464
 // 815 / x = 1.464
@@ -15,17 +19,34 @@ export type WorkItemProps = {
   video?: VideoProps;
   title: string;
   description: string;
+  itemNumber: string;
 };
-export function WorkItem({ image, title, description, video }: WorkItemProps) {
+export function WorkItem({
+  image,
+  title,
+  description,
+  video,
+  itemNumber,
+}: WorkItemProps) {
   console.log({ video });
 
   return (
-    <div className="flex justify-between flex-col workItemBreakpoint:flex-row">
+    <div className="relative flex justify-between flex-col workItemBreakpoint:flex-row py-24">
       <div className="flex flex-col justify-between w-full workItemBreakpoint:w-2/5">
-        <h3 className="h1 leading-none -mt-2">{title}</h3>
-        <p className="base pt-8">{description}</p>
+        <span className="absolute text-tiny top-6">{itemNumber}</span>
+        <h3 className="h1 leading-none -mt-2">
+          {/* <AnimatedText interSectionOptions={{ threshold: 0 }}> */}
+          <AnimatedTextPop>{title}</AnimatedTextPop>
+          {/* </AnimatedText> */}
+        </h3>
+        <p className="base pt-8">
+          <AnimatedTextFadeIn interSectionOptions={{ threshold: 0 }}>
+            {description}
+          </AnimatedTextFadeIn>
+        </p>
       </div>
-      <div className="w-full pt-16 workItemBreakpoint:pt-0 workItemBreakpoint:w-6/12">
+      <div className="relative overflow-hidden w-full pt-16 workItemBreakpoint:pt-0 workItemBreakpoint:w-6/12">
+        <AnimatedImageOverlay />
         {!video && (
           <Image src={image.src} alt={image.alt} layout="responsive" sizes="" />
         )}

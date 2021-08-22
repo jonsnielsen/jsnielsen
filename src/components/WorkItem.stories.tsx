@@ -15,6 +15,7 @@ export default {
 export const Primary: React.VFC<{}> = () => (
   <WorkItemWrapper>
     <WorkItem
+      itemNumber="01/"
       description="Frontend developer on the amazing digital team at SOUNDBOKS.  Main responsibilities included working on the webshop and on the  mobile app."
       title="Soundboks"
       image={{

@@ -3,26 +3,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @apply text-xl-400 font-bold lg:text-xl; */
 @layer components {
   h1,
   .h1 {
-    @apply font-bold;
+    @apply font-medium;
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-family: 'Plus Jakarta Sans';
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   h2,
   .h2 {
-    @apply font-bold;
-    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    @apply font-medium;
+    font-size: clamp(2.35rem, 4vw, 3.1rem);
     font-family: 'Plus Jakarta Sans';
   }
 
   h3,
   .h3 {
-    @apply text-lg font-bold;
+    @apply text-lg font-medium;
     font-family: 'Plus Jakarta Sans';
   }
 
@@ -34,17 +33,32 @@
   }
 
   .content-section {
-    @apply max-w-xxl mx-auto px-4 sm:px-8 lg:px-20;
+    /* @apply max-w-xxl mx-auto px-4 sm:px-8 lg:px-20;  */
+    @apply mx-auto px-4 sm:px-10;
   }
 
   .services-grid {
     @apply max-w-6xl mx-auto grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-2 gap-y-20 lg:gap-y-32;
     display: grid;
     column-gap: clamp(30px, 8vw, 200px);
-    /* row-gap: 100px; */
     width: fit-content;
+  }
 
-    /* ggap-y-32 gap-x-60 */
+  button,
+  .button {
+    @apply bg-white text-tiny px-5 py-1;
+    border: 1px solid theme('colors.text.DEFAULT');
+  }
+  button:hover,
+  .button:hover {
+    @apply text-white bg-primary transition-colors;
+  }
+  .button-lg {
+    @apply bg-white text-sm px-7 py-4;
+    border: 1px solid theme('colors.text.DEFAULT');
+  }
+  .button-lg:hover {
+    @apply text-white bg-primary transition-colors;
   }
 }
 
@@ -60,6 +74,12 @@
     font-weight: 600;
     src: url(/fonts/PlusJakartaSans-Medium.woff2) format('woff2'),
       url(/fonts/PlusJakartaSans-Medium.woff) format('woff');
+  }
+  @font-face {
+    font-family: Plus Jakarta Sans;
+    font-weight: 800;
+    src: url(/fonts/PlusJakartaSans-Bold.woff2) format('woff2'),
+      url(/fonts/PlusJakartaSans-Bold.woff) format('woff');
   }
   * {
     margin: 0;

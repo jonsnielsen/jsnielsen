@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
+      white: {
+        DEFAULT: '#fff'
+      },
       background: {
         DEFAULT: '#F5F5F5',
         600: '#E9E9E9'
@@ -17,18 +20,21 @@ module.exports = {
       secondary: { DEFAULT: '#0065D4' }
     },
     fontSize: {
-      'sm': '1.1rem',
+      'tiny': '1rem',
+      'sm': '1.2rem',
       'base-400': '1.5rem', // 24px
       'base': '1.35rem', // 26px
-      'lg': '2.65rem',
+      'lg': '2.35rem',
       'xl': '5.50rem',
       'xl-400': '3.5rem',
     },
     fontWeight: {
       normal: 400,
-      bold: 600,
+      medium: 600,
+      bold: 800,
     },
     screens: {
+      'tiny': '550px',
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
@@ -56,6 +62,9 @@ module.exports = {
     extend: {
       margin: {
         '90': '22rem'
+      },
+      padding: {
+        '42': '10.3rem',
       },
       maxWidth: {
         xxl: '1624px'

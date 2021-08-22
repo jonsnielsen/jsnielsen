@@ -1,47 +1,64 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import { Layout } from '../components/Layout';
 import { WorkItem, WorkItemProps } from '../components/WorkItem';
 import soundboksImage from '../assets/images/soundboks.png';
 import jonasElsgaardImage from '../assets/images/jonaselsgaard.png';
 // import jonasElsgaardVideo from '../assets/images/jonaselsgaard.mp4';
 import rakatXImage from '../assets/images/rakatx.png';
+import { AnimatedText } from '../components/AnimatedText';
+import { AnimatedTextFadeIn } from '../components/AnimatedTextFadeIn';
+import { AnimatedTextPop } from '../components/AnimatedTextPop';
+import { Divider } from '../components/Divider';
+import { DividerAnimated } from '../components/DividerAnimated';
 
 export default function Home() {
   return (
     <Layout>
-      <section className="mt-40 xl:mt-90 mb-60 content-section">
-        <h1>
-          Freelance frontend developer based in Copenhagen building immersive
-          digital experiences.
+      <section className="mt-40 xl:mt-90 mb-80 content-section">
+        <h1 style={{ maxWidth: '1300px' }}>
+          <AnimatedTextPop>
+            Freelance frontend developer based in Copenhagen building immersive
+            digital experiences.
+          </AnimatedTextPop>
         </h1>
       </section>
-      <section>
-        <h2 className="mb-8 content-section">Selected work ↓</h2>
+      <section className="content-section">
+        <h2 className="mb-8">
+          {/* <AnimatedText>Selected work ↓</AnimatedText> */}
+          Selected Work &#8595;
+        </h2>
         <ul>
           {workItems.map((workItem, index) => (
             <>
-              <Seperator />
-              <li className="my-20 content-section" key={workItem.title}>
+              <Divider />
+              <li key={workItem.title}>
                 <WorkItem
                   title={workItem.title}
                   description={workItem.description}
                   image={workItem.image}
                   video={workItem.video}
+                  itemNumber={`0${index + 1}/`}
                 />
               </li>
-              {index === workItems.length - 1 && <Seperator />}
+              {index === workItems.length - 1 && <Divider />}
             </>
           ))}
         </ul>
       </section>
-      <section className="mt-12 mb-40 content-section">
-        <h2 className="mb-40">Services ↓</h2>
-        <ul className="services-grid">
-          {services.map((service) => (
-            <li className="max-w-xl" key={service.title}>
-              <h3 className="mb-4 lg:mb-12">{service.title}</h3>
-              <p>{service.description}</p>
+      <section className="mt-12 mb-40 content-section block sm:flex">
+        <h2 className="mb-20 sm:mb-40 w-full: sm:w-1/2">
+          Services <span className="hidden sm:inline-block">&#8594;</span>
+          <span className="inline-block sm:hidden">&#8595;</span>
+        </h2>
+        <ul className="w-full sm:w-1/2">
+          {services.map((service, i) => (
+            <li className="" key={service.title}>
+              {i !== 0 && <DividerAnimated className="mt-14 mb-6" />}
+              <h3 className="mb-4 lg:mb-6 text-sm font-normal">
+                <AnimatedTextFadeIn>{service.title}</AnimatedTextFadeIn>
+              </h3>
+              <p className="text-sm max-w-lg">
+                <AnimatedTextFadeIn>{service.description}</AnimatedTextFadeIn>
+              </p>
             </li>
           ))}
         </ul>
@@ -50,7 +67,22 @@ export default function Home() {
   );
 }
 
-const workItems: WorkItemProps[] = [
+const workItems: Omit<WorkItemProps, 'itemNumber'>[] = [
+  {
+    title: 'Soundboks',
+    description:
+      'I worked as frontent developer between 2020 and 2021 on the amazing digital team at SOUNDBOKS. My main responsibilities included the webshop and on the mobile app.',
+    image: {
+      alt: 'soundboks website',
+      src: soundboksImage,
+    },
+    video: {
+      backgroundColor: '#E8542F',
+      src: '/videos/soundboks-ultra.mp4',
+      aspectWidth: 1654,
+      aspectHeight: 1228,
+    },
+  },
   {
     title: 'Jonas Elsgaard',
     description:
@@ -65,21 +97,6 @@ const workItems: WorkItemProps[] = [
       aspectHeight: 1114,
       aspectWidth: 1644,
       backgroundColor: '#EFEEEF',
-    },
-  },
-  {
-    title: 'Soundboks',
-    description:
-      'I worked as frontent developer between 2020 and 2021 on the amazing digital team at SOUNDBOKS. My main responsibilities included the webshop and on the mobile app.',
-    image: {
-      alt: 'soundboks website',
-      src: soundboksImage,
-    },
-    video: {
-      backgroundColor: '#E8542F',
-      src: '/videos/soundboks-ultra.mp4',
-      aspectWidth: 1654,
-      aspectHeight: 1228,
     },
   },
   {
@@ -120,13 +137,3 @@ const services: ServiceProps[] = [
       'Testing the application helps guarantee that things keep working as intented and gives confidence when the application grows and changes are needed',
   },
 ];
-
-function Seperator() {
-  return (
-    <div
-      style={{
-        border: '1px solid black',
-      }}
-    ></div>
-  );
-}

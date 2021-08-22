@@ -5,9 +5,3 @@
   z-index: 200;
   mix-blend-mode: difference;
 }
-.badgeWrapper img {
-}
-
-.badge {
-  mix-blend-mode: difference;
-}
