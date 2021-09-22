@@ -15,7 +15,9 @@ export function AnimatedText({
   children,
   interSectionOptions = { threshold: 0 },
 }: AnimatedTextProps) {
-  const { ref, hasBeenInView } = useHasBeenInView(interSectionOptions);
+  const { ref, hasBeenInView } = useHasBeenInView({
+    options: interSectionOptions,
+  });
 
   // split text into words
   // const words = children.split(' ');

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { AnimatedImageOverlay } from './AnimatedImageOverlay';
 import { AnimatedText } from './AnimatedText';
 import { AnimatedTextFadeIn } from './AnimatedTextFadeIn';
+import { AnimatedTextLineByLine } from './AnimatedTextLineByLine';
 import { AnimatedTextPop } from './AnimatedTextPop';
 import { Video, VideoProps } from './Video';
 // 732 / 500 = 1.464
@@ -28,15 +29,13 @@ export function WorkItem({
   video,
   itemNumber,
 }: WorkItemProps) {
-  console.log({ video });
-
   return (
     <div className="relative flex justify-between flex-col workItemBreakpoint:flex-row py-24">
       <div className="flex flex-col justify-between w-full workItemBreakpoint:w-2/5">
         <span className="absolute text-tiny top-6">{itemNumber}</span>
         <h3 className="h1 leading-none -mt-2">
           {/* <AnimatedText interSectionOptions={{ threshold: 0 }}> */}
-          <AnimatedTextPop>{title}</AnimatedTextPop>
+          <AnimatedTextLineByLine>{title}</AnimatedTextLineByLine>
           {/* </AnimatedText> */}
         </h3>
         <p className="base pt-8">

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import { DeveloperBadge } from './DeveloperBadge';
 import { useRouter } from 'next/router';
+import { Divider } from './Divider';
 
 type LayoutProps = {
   children: ReactNode;
@@ -42,23 +43,25 @@ export function Layout({ children }: LayoutProps) {
       {/* padding under header to make content go down */}
       <div className="h-24" />
       <main>{children}</main>
-      <div className="bg-background-600">
-        <footer className="content-section pt-20 pb-40 flex gap-x-20 flex-col md:flex-row justify-between">
-          <p className="max-w-md mb-12 md:mb-0">
+      <div className="content-section">
+        <Divider />
+        <footer className="pt-16 pb-40 flex flex-col md:flex-row justify-between">
+          <p className="text-tiny max-w-sm w-1/2 mb-12 md:mb-0 pr-12">
             Feel free to reach out if you have any questions or just want to say
             hello!
           </p>
-          <div className="flex gap-x-12 gap-y-10 flex-col lg:flex-row">
+          <div className="flex w-1/2 gap-x-20 gap-y-10 flex-col lg:flex-row">
             <div style={{ width: 'fit-content' }}>
-              <h3 className="text-base font-normal mb-4">Contact</h3>
-              <ul className="text-base">
+              <h3 className="text-tiny font-normal mb-4">Contact</h3>
+              <ul className="text-tiny">
                 <li>jonathan.sparvath@gmail.com</li>
                 <li>+45 81 75 53 45</li>
+                <li>Based in Copenhagen, Denmark</li>
               </ul>
             </div>
             <div style={{ width: 'fit-content' }}>
-              <h3 className="text-base font-normal mb-4">Social</h3>
-              <ul className="text-base">
+              <h3 className="text-tiny font-normal mb-4">Social</h3>
+              <ul className="text-tiny">
                 <li>
                   <a
                     target="_blank"

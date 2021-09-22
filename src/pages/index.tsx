@@ -9,16 +9,17 @@ import { AnimatedTextFadeIn } from '../components/AnimatedTextFadeIn';
 import { AnimatedTextPop } from '../components/AnimatedTextPop';
 import { Divider } from '../components/Divider';
 import { DividerAnimated } from '../components/DividerAnimated';
+import { AnimatedTextLineByLine } from '../components/AnimatedTextLineByLine';
 
 export default function Home() {
   return (
     <Layout>
       <section className="mt-40 xl:mt-90 mb-80 content-section">
         <h1 style={{ maxWidth: '1300px' }}>
-          <AnimatedTextPop>
+          <AnimatedTextLineByLine>
             Freelance frontend developer based in Copenhagen building immersive
             digital experiences.
-          </AnimatedTextPop>
+          </AnimatedTextLineByLine>
         </h1>
       </section>
       <section className="content-section">

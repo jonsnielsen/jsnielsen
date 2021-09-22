@@ -2,7 +2,9 @@ import { motion } from 'framer-motion';
 import { useHasBeenInView } from '../utils/useHasBeenInView';
 export function AnimatedImageOverlay() {
   const { ref, hasBeenInView } = useHasBeenInView({
-    threshold: 0.0,
+    options: {
+      threshold: 0.0,
+    },
   });
 
   return (
