@@ -11,14 +11,11 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@cyriacbr/react-split-text": "^1.0.0",
-    "@moxy/react-split-text": "^1.0.1",
     "framer-motion": "^4.1.17",
     "next": "11.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intersection-observer": "^8.32.0",
-    "splitting": "^1.0.6"
+    "react-intersection-observer": "^8.32.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

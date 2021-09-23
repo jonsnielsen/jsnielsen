@@ -8,8 +8,6 @@ type LayoutProps = {
   children: ReactNode;
 };
 export function Layout({ children }: LayoutProps) {
-  const router = useRouter();
-
   return (
     <>
       <DeveloperBadge />

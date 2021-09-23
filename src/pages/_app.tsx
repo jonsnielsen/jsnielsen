@@ -1,15 +1,20 @@
+import { useEffect } from 'react';
 import '../styles/globals.css';
-// import '@moxy/react-split-text/dist/index.css';
-// import 'splitting/dist/splitting.css';
-// import 'splitting/dist/splitting-cells.css';
-// @ts-ignore
-// import Splitting from 'splitting';
-
-// Splitting();
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
+  // restore scroll
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.history.scrollRestoration = 'manual';
+      window.scrollTo({ top: 0, left: 0 });
+    }
+    router.events.on('routeChangeComplete', () =>
+      window.scrollTo({ top: 0, left: 0 }),
+    );
+  }, []);
+
   return (
     <>
       <Head>

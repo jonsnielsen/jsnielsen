@@ -1,11 +1,8 @@
 import React, {
   memo,
-  useEffect,
   useState,
   useRef,
   useLayoutEffect,
-  ReactElement,
-  ReactNode,
   ComponentType,
 } from 'react';
 
@@ -33,14 +30,13 @@ export const SplitText = memo(function SplitText({
   const initialElRef = useRef<HTMLElement>(null);
   const [lines, setLines] = useState<Element[][]>();
 
-  console.log('split text rerendering');
+  // Todo:
+  // useEffect(() => {
+  //   const onResize = debounce(() => setKey((v) => v + 1), 300);
+  //   window.addEventListener('resize', onResize);
+  //   return () => window.removeEventListener('resize', onResize);
+  // }, []);
 
-  // const onResize = debounce(() => setKey((v) => v + 1), 300);
-
-  useEffect(() => {
-    // window.addEventListener('resize', onResize);
-    // return () => window.removeEventListener('resize', onResize);
-  }, []);
   useLayoutEffect(() => {
     const initialEl = initialElRef.current;
 
@@ -66,7 +62,7 @@ export const SplitText = memo(function SplitText({
     );
   }
 
-  // This is what is initially rendered, and will be used to calculate the lines from
+  // This is what is initially rendered and what is used to calculate the lines
   return (
     <span ref={initialElRef}>
       {text.split(' ').map((word, i) => (
@@ -81,9 +77,11 @@ export function debounce(callback: Function, wait: number, immediate = false) {
 
   return function (this: any, ...args: any[]) {
     const callNow = immediate && !timeout;
+
     const next = () => callback.apply(this, args);
 
     clearTimeout(timeout);
+
     timeout = setTimeout(next, wait);
 
     if (callNow) {

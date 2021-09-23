@@ -18,7 +18,6 @@ export function DividerAnimated({
       animate={hasBeenInView ? 'visible' : 'hidden'}
       variants={variants}
       style={{
-        // borderBottom: '1px solid black',
         height: '1px',
         ...style,
       }}

@@ -1,14 +1,9 @@
 import Image from 'next/image';
-import { AnimatedImageOverlay } from './AnimatedImageOverlay';
-import { AnimatedText } from './AnimatedText';
-import { AnimatedTextFadeIn } from './AnimatedTextFadeIn';
-import { AnimatedTextLineByLine } from './AnimatedTextLineByLine';
-import { AnimatedTextPop } from './AnimatedTextPop';
+import { MediaCover } from './MediaCover';
+import { TextAnimationFadeIn } from './TextAnimationFadeIn';
+import { TextAnimationLineByLine } from './TextAnimationLineByLine';
 import { Video, VideoProps } from './Video';
-// 732 / 500 = 1.464
-// 815 / x = 1.464
-// x = 815 / 1.464 = 556
-// ratio:  0,68
+
 export type WorkItemProps = {
   /**
    * Preferred image dimensions: 815 x 556
@@ -34,18 +29,16 @@ export function WorkItem({
       <div className="flex flex-col justify-between w-full workItemBreakpoint:w-2/5">
         <span className="absolute text-tiny top-6">{itemNumber}</span>
         <h3 className="h1 leading-none -mt-2">
-          {/* <AnimatedText interSectionOptions={{ threshold: 0 }}> */}
-          <AnimatedTextLineByLine>{title}</AnimatedTextLineByLine>
-          {/* </AnimatedText> */}
+          <TextAnimationLineByLine>{title}</TextAnimationLineByLine>
         </h3>
         <p className="base pt-8">
-          <AnimatedTextFadeIn interSectionOptions={{ threshold: 0 }}>
+          <TextAnimationFadeIn interSectionOptions={{ threshold: 0 }}>
             {description}
-          </AnimatedTextFadeIn>
+          </TextAnimationFadeIn>
         </p>
       </div>
       <div className="relative overflow-hidden w-full pt-16 workItemBreakpoint:pt-0 workItemBreakpoint:w-6/12">
-        <AnimatedImageOverlay />
+        <MediaCover />
         {!video && (
           <Image src={image.src} alt={image.alt} layout="responsive" sizes="" />
         )}

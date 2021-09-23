@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import badgeSvg from '../assets/images/badge.svg';
 import styles from './developerBadge.module.css';
 import {
   motion,
@@ -10,7 +8,9 @@ import {
 
 export function DeveloperBadge() {
   const { scrollY } = useViewportScroll();
+
   const slowedRotateAnim = useTransform(scrollY, (latest) => latest / 8);
+
   const rotateAnim = useSpring(slowedRotateAnim, {
     stiffness: 400,
     damping: 90,

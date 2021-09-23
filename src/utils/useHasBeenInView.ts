@@ -4,12 +4,13 @@ import {
   IntersectionOptions as IntersectionOptionsOriginal,
 } from 'react-intersection-observer';
 
-// re export IntersectionOptions
+// re-export IntersectionOptions
 export type IntersectionOptions = IntersectionOptionsOriginal;
 
 export type UseHasBeenInViewProps = {
   options?: IntersectionOptions;
 };
+
 export function useHasBeenInView({
   options = { threshold: 0 },
 }: UseHasBeenInViewProps) {

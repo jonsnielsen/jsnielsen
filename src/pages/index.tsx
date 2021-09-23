@@ -2,67 +2,69 @@ import { Layout } from '../components/Layout';
 import { WorkItem, WorkItemProps } from '../components/WorkItem';
 import soundboksImage from '../assets/images/soundboks.png';
 import jonasElsgaardImage from '../assets/images/jonaselsgaard.png';
-// import jonasElsgaardVideo from '../assets/images/jonaselsgaard.mp4';
 import rakatXImage from '../assets/images/rakatx.png';
-import { AnimatedText } from '../components/AnimatedText';
-import { AnimatedTextFadeIn } from '../components/AnimatedTextFadeIn';
-import { AnimatedTextPop } from '../components/AnimatedTextPop';
+import { TextAnimationFadeIn } from '../components/TextAnimationFadeIn';
 import { Divider } from '../components/Divider';
 import { DividerAnimated } from '../components/DividerAnimated';
-import { AnimatedTextLineByLine } from '../components/AnimatedTextLineByLine';
+import { TextAnimationLineByLine } from '../components/TextAnimationLineByLine';
 
 export default function Home() {
+  const workItemList = (
+    <ul>
+      {workItems.map((workItem, index) => (
+        <>
+          <Divider />
+          <li key={workItem.title}>
+            <WorkItem
+              title={workItem.title}
+              description={workItem.description}
+              image={workItem.image}
+              video={workItem.video}
+              itemNumber={`0${index + 1}/`}
+            />
+          </li>
+          {index === workItems.length - 1 && <Divider />}
+        </>
+      ))}
+    </ul>
+  );
+
+  const serviceList = (
+    <ul className="w-full sm:w-1/2">
+      {services.map((service, i) => (
+        <li className="" key={service.title}>
+          {i !== 0 && <DividerAnimated className="mt-14 mb-6" />}
+          <h3 className="mb-4 lg:mb-6 text-sm font-normal">
+            <TextAnimationFadeIn>{service.title}</TextAnimationFadeIn>
+          </h3>
+          <p className="text-sm max-w-lg">
+            <TextAnimationFadeIn>{service.description}</TextAnimationFadeIn>
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <Layout>
       <section className="mt-40 xl:mt-90 mb-80 content-section">
         <h1 style={{ maxWidth: '1300px' }}>
-          <AnimatedTextLineByLine>
+          <TextAnimationLineByLine>
             Freelance frontend developer based in Copenhagen building immersive
             digital experiences.
-          </AnimatedTextLineByLine>
+          </TextAnimationLineByLine>
         </h1>
       </section>
       <section className="content-section">
-        <h2 className="mb-8">
-          {/* <AnimatedText>Selected work ↓</AnimatedText> */}
-          Selected Work &#8595;
-        </h2>
-        <ul>
-          {workItems.map((workItem, index) => (
-            <>
-              <Divider />
-              <li key={workItem.title}>
-                <WorkItem
-                  title={workItem.title}
-                  description={workItem.description}
-                  image={workItem.image}
-                  video={workItem.video}
-                  itemNumber={`0${index + 1}/`}
-                />
-              </li>
-              {index === workItems.length - 1 && <Divider />}
-            </>
-          ))}
-        </ul>
+        <h2 className="mb-8">Selected Work &#8595;</h2>
+        {workItemList}
       </section>
       <section className="mt-12 mb-40 content-section block sm:flex">
         <h2 className="mb-20 sm:mb-40 w-full: sm:w-1/2">
           Services <span className="hidden sm:inline-block">&#8594;</span>
           <span className="inline-block sm:hidden">&#8595;</span>
         </h2>
-        <ul className="w-full sm:w-1/2">
-          {services.map((service, i) => (
-            <li className="" key={service.title}>
-              {i !== 0 && <DividerAnimated className="mt-14 mb-6" />}
-              <h3 className="mb-4 lg:mb-6 text-sm font-normal">
-                <AnimatedTextFadeIn>{service.title}</AnimatedTextFadeIn>
-              </h3>
-              <p className="text-sm max-w-lg">
-                <AnimatedTextFadeIn>{service.description}</AnimatedTextFadeIn>
-              </p>
-            </li>
-          ))}
-        </ul>
+        {serviceList}
       </section>
     </Layout>
   );
@@ -93,7 +95,6 @@ const workItems: Omit<WorkItemProps, 'itemNumber'>[] = [
       src: jonasElsgaardImage,
     },
     video: {
-      // src: jonasElsgaardVideo,
       src: '/videos/jonaselsgaard.mp4',
       aspectHeight: 1114,
       aspectWidth: 1644,

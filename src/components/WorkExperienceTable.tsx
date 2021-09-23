@@ -18,7 +18,7 @@ export function WorkExperienceTable({
   entries,
   className,
 }: WorkExperienceTableProps) {
-  const tableSmall = (() => {
+  const TableSmall = () => {
     const classNameEntryWrapper = 'flex';
 
     const classNameKey = 'w-5/12 tiny:w-1/3';
@@ -49,33 +49,35 @@ export function WorkExperienceTable({
         </ul>
       </div>
     );
-  })();
+  };
+
+  const TableLarge = () => (
+    <div className="hidden md:block">
+      <div className="flex max-w-6xl pb-1">
+        <span className="w-1/5">Year</span>
+        <span className="w-1/3">Company</span>
+        <span>Role</span>
+      </div>
+      <Divider />
+      <ul>
+        {entries.map((entry, i) => (
+          <li key={i}>
+            <div className="flex max-w-6xl my-8">
+              <span className="w-1/5">{entry.year}</span>
+              <span className="w-4/12">{entry.company}</span>
+              <span>{entry.role}</span>
+            </div>
+            <Divider />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 
   return (
     <div className={className}>
-      {/* Large version */}
-      <div className="hidden md:block">
-        <div className="flex max-w-6xl pb-1">
-          <span className="w-1/5">Year</span>
-          <span className="w-1/3">Company</span>
-          <span>Role</span>
-        </div>
-        <Divider />
-        <ul>
-          {entries.map((entry, i) => (
-            <li key={i}>
-              <div className="flex max-w-6xl my-8">
-                <span className="w-1/5">{entry.year}</span>
-                <span className="w-4/12">{entry.company}</span>
-                <span>{entry.role}</span>
-              </div>
-              <Divider />
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* Small version */}
-      {tableSmall}
+      <TableLarge />
+      <TableSmall />
     </div>
   );
 }
