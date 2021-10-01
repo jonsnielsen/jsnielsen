@@ -112,12 +112,12 @@ const workItems: Omit<WorkItemProps, 'itemNumber'>[] = [
   },
 ];
 
-type ServiceProps = {
+type ServiceType = {
   title: string;
   description: string;
 };
 
-const services: ServiceProps[] = [
+const services: ServiceType[] = [
   {
     title: 'Website development',
     description:
