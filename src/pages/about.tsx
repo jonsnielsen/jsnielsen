@@ -75,24 +75,19 @@ export default function About() {
 
 const workExperienceEntries: WorkExperienceTableProps['entries'] = [
   {
-    year: '2021',
-    company: 'Mercell',
-    role: 'Freelance fullstack developer',
+    year: '2019 - Present',
+    company: 'Jonathan Sparvath',
+    role: 'Freelance frontend developer',
   },
   {
     year: '2020 - 2021',
     company: 'SOUNDBOKS',
-    role: 'Fulltime frontend developer',
-  },
-  {
-    year: '2019',
-    company: 'DHI',
-    role: 'Freelance frontend developer',
+    role: 'Frontend developer',
   },
   {
     year: '2018 - 2019',
-    company: 'Danmarks Miljøportal',
-    role: 'Freelance fullstack developer',
+    company: 'Moment',
+    role: 'IT Consultant',
   },
   {
     year: '2017',

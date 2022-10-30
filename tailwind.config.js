@@ -1,31 +1,33 @@
 module.exports = {
-  mode: 'jit',
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       white: {
-        DEFAULT: '#fff'
+        DEFAULT: '#fff',
       },
       background: {
-        DEFAULT: '#F5F5F5',
-        600: '#E9E9E9'
+        DEFAULT: '#f6f0ed',
+        600: '#eee3dd',
       },
       text: {
-        DEFAULT: '#000'
+        DEFAULT: '#000',
       },
       primary: {
-        DEFAULT: '#0065D4'
+        DEFAULT: '#0065D4',
       },
-      secondary: { DEFAULT: '#0065D4' }
+      secondary: { DEFAULT: '#0065D4' },
     },
     fontSize: {
-      'tiny': '1rem',
-      'sm': '1.2rem',
+      'huge-max': '5.5rem',
+      'huge-min': '2.3rem',
+
+      tiny: '1rem',
+      sm: '1.2rem',
       'base-400': '1.5rem', // 24px
-      'base': '1.35rem', // 26px
-      'lg': '2.35rem',
-      'xl': '5.50rem',
+      base: '1.35rem', // 26px
+      lg: '2.35rem',
+      xl: '5.50rem',
       'xl-400': '3.5rem',
     },
     fontWeight: {
@@ -33,19 +35,22 @@ module.exports = {
       medium: 600,
       bold: 800,
     },
+    fontFamily: {
+      display: ['Plus Jakarta Sans', 'sans-serif'],
+    },
     screens: {
-      'tiny': '550px',
-      'sm': '640px',
+      tiny: '550px',
+      sm: '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      md: '768px',
       // => @media (min-width: 768px) { ... }
-      'workItemBreakpoint': '900px',
+      workItemBreakpoint: '900px',
 
-      'lg': '1024px',
+      lg: '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1460px',
+      xl: '1460px',
       // => @media (min-width: 1280px) { ... }
       // => @media (min-width: 1536px) { ... }
     },
@@ -61,19 +66,18 @@ module.exports = {
     // },
     extend: {
       margin: {
-        '90': '22rem'
+        90: '22rem',
       },
       padding: {
-        '42': '10.3rem',
+        42: '10.3rem',
       },
       maxWidth: {
-        xxl: '1624px'
-      }
-
+        xxl: '1624px',
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

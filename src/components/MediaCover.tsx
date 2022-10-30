@@ -19,8 +19,8 @@ export function MediaCover() {
           delay: 0.8,
         },
       }}
-      className="absolute w-full h-full"
-      style={{ background: 'rgba(245, 245, 245)', zIndex: 1 }}
+      className="absolute w-full h-full bg-background"
+      style={{ zIndex: 1 }}
     />
   );
 }

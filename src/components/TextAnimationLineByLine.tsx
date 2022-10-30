@@ -35,7 +35,7 @@ const LineWrapper: SplitTextProps['LineWrapper'] = function lineWrapper({
   children,
 }) {
   return (
-    <span className="overflow-hidden inline-flex">
+    <span className="overflow-hidden inline-flex" style={{ lineHeight: 1.3 }}>
       <motion.span
         variants={lineVariants}
         className="inline-block"

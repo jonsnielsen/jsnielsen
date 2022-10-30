@@ -1,12 +1,12 @@
 import { Layout } from '../components/Layout';
 import { WorkItem, WorkItemProps } from '../components/WorkItem';
+import cannifyClinicsImage from '../assets/images/cannifyclinics.png';
 import soundboksImage from '../assets/images/soundboks.png';
 import jonasElsgaardImage from '../assets/images/jonaselsgaard.png';
 import rakatXImage from '../assets/images/rakatx.png';
 import { TextAnimationFadeIn } from '../components/TextAnimationFadeIn';
 import { Divider } from '../components/Divider';
 import { DividerAnimated } from '../components/DividerAnimated';
-import { TextAnimationLineByLine } from '../components/TextAnimationLineByLine';
 
 export default function Home() {
   const workItemList = (
@@ -49,14 +49,12 @@ export default function Home() {
     <Layout>
       <section className="mt-40 xl:mt-90 mb-80 content-section">
         <h1 style={{ maxWidth: '1300px' }}>
-          <TextAnimationLineByLine>
-            Freelance frontend developer based in Copenhagen building immersive
-            digital experiences.
-          </TextAnimationLineByLine>
+          Freelance frontend developer based in Copenhagen building immersive
+          digital experiences.
         </h1>
       </section>
       <section className="content-section">
-        <h2 className="mb-8">Selected Work &#8595;</h2>
+        <h2 className="mb-8 section-title">Selected Work &#8595;</h2>
         {workItemList}
       </section>
       <section className="mt-12 mb-40 content-section block sm:flex">
@@ -71,6 +69,21 @@ export default function Home() {
 }
 
 const workItems: Omit<WorkItemProps, 'itemNumber'>[] = [
+  {
+    title: 'Cannify  Clinics',
+    description:
+      'I was hired to develop the frontend for Cannify Clinics - A platform for connecting medicinal cannabis patients with doctors. The task included involved create marketing pages, a customer portal and a support portal.',
+    image: {
+      alt: 'cannify clinics website',
+      src: cannifyClinicsImage,
+    },
+    video: {
+      backgroundColor: '#E8542F',
+      src: '/videos/cannifyclinics.mp4',
+      aspectWidth: 1654,
+      aspectHeight: 1228,
+    },
+  },
   {
     title: 'Soundboks',
     description:
@@ -104,7 +117,7 @@ const workItems: Omit<WorkItemProps, 'itemNumber'>[] = [
   {
     title: 'RakatX',
     description:
-      'Front-end and back-end development on a webapp used in the online tendering process for managing contracts.',
+      'Fullstack development on a webapp used in the online tendering process for managing contracts.',
     image: {
       alt: 'rakatx web app',
       src: rakatXImage,

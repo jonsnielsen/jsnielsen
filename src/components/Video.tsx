@@ -19,7 +19,7 @@ export function Video({
       }}
     >
       <video
-        className="absolute top-0 left-0 object-cover"
+        className="absolute w-full h-full top-0 left-0 object-cover"
         muted
         playsInline
         preload="metadata"

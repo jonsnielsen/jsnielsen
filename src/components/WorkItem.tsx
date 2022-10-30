@@ -9,7 +9,7 @@ export type WorkItemProps = {
    * Preferred image dimensions: 815 x 556
    */
   image: {
-    src: StaticImageData;
+    src: any;
     alt: string;
   };
   video?: VideoProps;

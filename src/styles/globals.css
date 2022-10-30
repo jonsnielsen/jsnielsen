@@ -7,8 +7,8 @@
   h1,
   .h1 {
     @apply font-medium;
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
-    font-family: 'Plus Jakarta Sans';
+    font-size: clamp(theme('fontSize.huge-min'), 6vw, theme('fontSize.huge-max'));
+    font-family: theme('fontFamily.display');
     line-height: 1.3;
   }
 
@@ -30,6 +30,12 @@
   .base {
     @apply text-base font-normal;
     font-family: 'Plus Jakarta Sans';
+  }
+  
+  .section-title {
+    @apply font-medium;
+    font-size: clamp(2.35rem, 4vw, 3.1rem);
+    font-family: 'Plus Jakarta Sans'; 
   }
 
   .content-section {

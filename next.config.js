@@ -1,6 +1,5 @@
 module.exports = {
   reactStrictMode: true,
-  target: 'serverless',
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Important: return the modified config
     const prefix = '';
@@ -18,6 +17,6 @@ module.exports = {
         },
       ],
     });
-    return config
+    return config;
   },
-}
+};
