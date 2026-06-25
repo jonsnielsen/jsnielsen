@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Layout } from '../components/Layout';
 import { WorkItem, WorkItemProps } from '../components/WorkItem';
 import cannifyClinicsImage from '../assets/images/cannifyclinics.png';
@@ -12,9 +13,9 @@ export default function Home() {
   const workItemList = (
     <ul>
       {workItems.map((workItem, index) => (
-        <>
+        <Fragment key={workItem.title}>
           <Divider />
-          <li key={workItem.title}>
+          <li>
             <WorkItem
               title={workItem.title}
               description={workItem.description}
@@ -24,7 +25,7 @@ export default function Home() {
             />
           </li>
           {index === workItems.length - 1 && <Divider />}
-        </>
+        </Fragment>
       ))}
     </ul>
   );
