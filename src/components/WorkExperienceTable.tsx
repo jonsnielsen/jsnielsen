@@ -31,7 +31,7 @@ export function WorkExperienceTable({
             <li key={i}>
               <div className={`${(i !== 0 && 'py-4') || 'mb-4'}`}>
                 <div className={classNameEntryWrapper}>
-                  <span className={classNameKey}>Year</span>
+                  <span className={classNameKey}>Period</span>
                   <span className={classNameValue}>{entry.year}</span>
                 </div>
                 <div className={classNameEntryWrapper}>
@@ -54,7 +54,7 @@ export function WorkExperienceTable({
   const TableLarge = () => (
     <div className="hidden md:block">
       <div className="flex max-w-6xl pb-1">
-        <span className="w-1/5">Year</span>
+        <span className="w-[22%]">Period</span>
         <span className="w-1/3">Company</span>
         <span>Role</span>
       </div>
@@ -63,7 +63,7 @@ export function WorkExperienceTable({
         {entries.map((entry, i) => (
           <li key={i}>
             <div className="flex max-w-6xl my-8">
-              <span className="w-1/5">{entry.year}</span>
+              <span className="w-[22%]">{entry.year}</span>
               <span className="w-4/12">{entry.company}</span>
               <span>{entry.role}</span>
             </div>

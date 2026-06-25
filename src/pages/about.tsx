@@ -4,8 +4,36 @@ import {
   WorkExperienceTable,
   WorkExperienceTableProps,
 } from '../components/WorkExperienceTable';
+import cvData from '../../cv-data.json';
 
 import styles from './about.module.css';
+
+const MONTH_NAMES = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
+function formatMonthYear(dateString: string) {
+  const [year, month] = dateString.split('-');
+  return `${MONTH_NAMES[Number(month) - 1]} ${year}`;
+}
+
+function formatDateRange(startDate: string, endDate: string) {
+  if (endDate === 'Present') {
+    return `${formatMonthYear(startDate)} - Present`;
+  }
+  return `${formatMonthYear(startDate)} - ${formatMonthYear(endDate)}`;
+}
 
 export default function About() {
   return (
@@ -16,15 +44,15 @@ export default function About() {
           <p className={`${styles['about-title']} h2 -mt-2 mb-12`}>About</p>
           <div>
             <h1 className="text-lg font-normal">
-              Hi! I’m Jonathan Nielsen, a freelance web developer specilized in
-              frontend development . I have been consulting and freelancing for
-              the past four years where I have worked with a broad range of
-              programming languages and technologies specializing in frontend
-              development.
+              Hi! I’m Jonathan Nielsen, a freelance fullstack developer with
+              7+ years of professional experience building modern websites,
+              scalable web applications, CMS platforms, and design systems —
+              both independently and as part of larger development teams.
             </h1>
             <br />
             <p className="text-lg">
-              Contact me for any enquires or just say hello: hello@jsnielsen.com
+              Contact me for any enquires or just say hello:{' '}
+              {cvData.profile.email}
             </p>
           </div>
         </div>
@@ -62,9 +90,10 @@ export default function About() {
           </p>
           <br />
           <p className="text-lg">
-            React, JavaScript, CSS, Html, TypeScript, NextJS, GatsbyJS,
-            SanityCMS, StoryblokCMS, Wordpress, GraphQL, NodeJS, Vercel,
-            Netlify, AWS, Azure.
+            {cvData.globalSkills
+              .flatMap((skillCategory) => skillCategory.technologies)
+              .join(', ')}
+            .
           </p>
         </div>
         <Divider />
@@ -73,25 +102,9 @@ export default function About() {
   );
 }
 
-const workExperienceEntries: WorkExperienceTableProps['entries'] = [
-  {
-    year: '2019 - Present',
-    company: 'Jonathan Sparvath',
-    role: 'Freelance frontend developer',
-  },
-  {
-    year: '2020 - 2021',
-    company: 'SOUNDBOKS',
-    role: 'Frontend developer',
-  },
-  {
-    year: '2018 - 2019',
-    company: 'Moment',
-    role: 'IT Consultant',
-  },
-  {
-    year: '2017',
-    company: 'Kraftvaerk',
-    role: 'IT Consultant',
-  },
-];
+const workExperienceEntries: WorkExperienceTableProps['entries'] =
+  cvData.experiences.map((experience) => ({
+    year: formatDateRange(experience.startDate, experience.endDate),
+    company: experience.company,
+    role: experience.role,
+  }));

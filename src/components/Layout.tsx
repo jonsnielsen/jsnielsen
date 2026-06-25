@@ -40,7 +40,9 @@ export function Layout({ children }: LayoutProps) {
       </header>
       {/* padding under header to make content go down */}
       <div className="h-24" />
-      <main>{children}</main>
+      <div className="flex flex-col justify-center items-center">
+        <main style={{ maxWidth: '1355px' }}> {children}</main>
+      </div>
       <div className="content-section">
         <Divider />
         <footer className="pt-16 pb-40 flex flex-col md:flex-row justify-between">
