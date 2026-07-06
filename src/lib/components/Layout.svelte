@@ -12,7 +12,7 @@
 	<div
 		class="content-section fixed inset-x-0 z-10 mix-blend-difference text-white mx-auto flex h-24 max-w-[1355px] items-center justify-between min-[1900px]:max-w-none"
 	>
-		<div class="mix-blend-difference flex flex-1 items-center justify-between text-white">
+		<div class="flex flex-1 items-center justify-between">
 			<a href={resolve('/')} class="text-sm font-medium">
 				<span class="hidden tiny:block">
 					Jonathan <br class="block sm:hidden" />
@@ -26,14 +26,24 @@
 				</ul>
 			</nav>
 		</div>
-		<a class="button ml-8 mt-1" href="mailto:jonathan.sparvath@gmail.com">Write me</a>
+		<span class="button invisible ml-8 mt-1" aria-hidden="true">Write me</span>
+	</div>
+	<div
+		class="content-section pointer-events-none fixed inset-x-0 z-10 mx-auto flex h-24 max-w-[1355px] items-center justify-end min-[1900px]:max-w-none"
+	>
+		<a
+			class="button pointer-events-auto ml-8 mt-1"
+			href="mailto:jonathan.sparvath@gmail.com"
+		>
+			Write me
+		</a>
 	</div>
 </header>
 <div class="h-24"></div>
 <div class="flex flex-col items-center justify-center">
 	<main style="max-width: 1355px;">{@render children()}</main>
 </div>
-<div class="content-section">
+<div class="content-section mx-auto max-w-[1355px] min-[1900px]:max-w-none">
 	<Divider />
 	<footer class="flex flex-col justify-between pb-40 pt-16 md:flex-row">
 		<p class="mb-12 w-1/2 max-w-sm text-tiny md:mb-0 pr-12">

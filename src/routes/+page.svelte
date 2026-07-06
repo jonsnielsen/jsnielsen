@@ -14,11 +14,6 @@
 
 	const services: ServiceType[] = [
 		{
-			title: 'App modernization',
-			description:
-				'I get dropped into large, existing codebases to redesign and modernize them — improving the UX, performance and architecture without stopping the product.'
-		},
-		{
 			title: 'Product development',
 			description:
 				'From idea to shipped product: fullstack development with the testing, tooling and deployment setup that keeps it maintainable as it grows.'
@@ -26,12 +21,17 @@
 		{
 			title: 'Design systems',
 			description:
-				'Component libraries and design systems that scale across web and native, so teams ship consistent UI faster instead of building everything twice.'
+				'Component libraries and design systems that scale across web and native — one implementation of every component, consistent UI everywhere.'
 		},
 		{
 			title: 'CMS & content platforms',
 			description:
-				'I help teams pick the right CMS and integrate it so editors create pages and manage content without needing a developer in the loop.'
+				'I help pick the right CMS and integrate it so editors can create pages and manage content without needing a developer in the loop.'
+		},
+		{
+			title: 'Automated testing',
+			description:
+				'Unit and end-to-end test suites that catch regressions before users do — making every release safe to ship and every refactor safe to make.'
 		}
 	];
 </script>
