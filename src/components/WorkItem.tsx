@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { MediaCover } from './MediaCover';
 import { TextAnimationFadeIn } from './TextAnimationFadeIn';
 import { TextAnimationLineByLine } from './TextAnimationLineByLine';
@@ -16,6 +17,8 @@ export type WorkItemProps = {
   title: string;
   description: string;
   itemNumber: string;
+  /** Links the work item to its case study page */
+  href?: string;
 };
 export function WorkItem({
   image,
@@ -23,6 +26,7 @@ export function WorkItem({
   description,
   video,
   itemNumber,
+  href,
 }: WorkItemProps) {
   return (
     <div className="relative flex justify-between flex-col workItemBreakpoint:flex-row py-24">
@@ -31,11 +35,24 @@ export function WorkItem({
         <h3 className="h1 leading-none -mt-2">
           <TextAnimationLineByLine>{title}</TextAnimationLineByLine>
         </h3>
-        <p className="base pt-8">
-          <TextAnimationFadeIn interSectionOptions={{ threshold: 0 }}>
-            {description}
-          </TextAnimationFadeIn>
-        </p>
+        <div>
+          <p className="base pt-8">
+            <TextAnimationFadeIn interSectionOptions={{ threshold: 0 }}>
+              {description}
+            </TextAnimationFadeIn>
+          </p>
+          {href && (
+            <p className="pt-6">
+              <TextAnimationFadeIn interSectionOptions={{ threshold: 0 }}>
+                <Link href={href}>
+                  <a className="text-sm font-medium underline underline-offset-4">
+                    Read case study &#8594;
+                  </a>
+                </Link>
+              </TextAnimationFadeIn>
+            </p>
+          )}
+        </div>
       </div>
       <div className="relative overflow-hidden w-full pt-16 workItemBreakpoint:pt-0 workItemBreakpoint:w-6/12">
         <MediaCover />

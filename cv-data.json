@@ -66,7 +66,7 @@
       "role": "Freelance Web Developer",
       "startDate": "2021-09",
       "endDate": "2022-01",
-      "description": "I was hired to develop the frontend for a platform for medicinal cannabis patients and doctors. I worked on the “open website” canifyclinics.com, a customer universe, and a custom support platform. I also set up Sanity as a CMS, which allowed the client to add and edit sections, and create new pages. The platform and CMS support multiple languages.",
+      "description": "I was hired to develop the frontend for a platform for medicinal cannabis patients and doctors. I worked on the “open website” canifyclinics.com, a customer universe, and a custom support dashboard. I also set up Sanity as a CMS, which allowed the client to add and edit sections, and create new pages. The platform and CMS support multiple languages.",
       "technologies": [
         "React",
         "Next.js",
@@ -246,7 +246,9 @@
         "CSS3",
         "HTML5",
         "Shadcn",
-        "Material UI"
+        "Material UI",
+        "Playwright",
+        "Cypress"
       ]
     },
     {

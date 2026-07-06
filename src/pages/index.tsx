@@ -1,30 +1,28 @@
 import { Fragment } from 'react';
 import { Layout } from '../components/Layout';
-import { WorkItem, WorkItemProps } from '../components/WorkItem';
-import cannifyClinicsImage from '../assets/images/cannifyclinics.png';
-import soundboksImage from '../assets/images/soundboks.png';
-import jonasElsgaardImage from '../assets/images/jonaselsgaard.png';
-import rakatXImage from '../assets/images/rakatx.png';
+import { WorkItem } from '../components/WorkItem';
 import { TextAnimationFadeIn } from '../components/TextAnimationFadeIn';
 import { Divider } from '../components/Divider';
 import { DividerAnimated } from '../components/DividerAnimated';
+import { caseStudies, ndaMention } from '../data/caseStudies';
 
 export default function Home() {
   const workItemList = (
     <ul>
-      {workItems.map((workItem, index) => (
-        <Fragment key={workItem.title}>
+      {caseStudies.map((study, index) => (
+        <Fragment key={study.slug}>
           <Divider />
           <li>
             <WorkItem
-              title={workItem.title}
-              description={workItem.description}
-              image={workItem.image}
-              video={workItem.video}
+              title={study.title}
+              description={study.tagline}
+              image={study.image}
+              video={study.video}
+              href={`/work/${study.slug}`}
               itemNumber={`0${index + 1}/`}
             />
           </li>
-          {index === workItems.length - 1 && <Divider />}
+          {index === caseStudies.length - 1 && <Divider />}
         </Fragment>
       ))}
     </ul>
@@ -50,13 +48,30 @@ export default function Home() {
     <Layout>
       <section className="mt-40 xl:mt-60 mb-80 content-section">
         <h1 style={{ maxWidth: '1300px' }}>
-          Frontend-leaning fullstack developer based in Copenhagen building
-          immersive digital experiences.
+          Senior fullstack developer helping teams build
+          complex and scalable web applications.
         </h1>
+        <p className="text-sm mt-8">
+          freelance &middot; 7+ years of experience &middot; Copenhagen area
+        </p>
       </section>
       <section className="content-section">
         <h2 className="mb-8 section-title">Selected Work &#8595;</h2>
         {workItemList}
+        <div className="relative py-16">
+          <span className="absolute text-tiny top-6">
+            {ndaMention.period}
+          </span>
+          <h3 className="h3 mb-4 pt-8">
+            <TextAnimationFadeIn>{ndaMention.title}</TextAnimationFadeIn>
+          </h3>
+          <p className="text-base max-w-2xl">
+            <TextAnimationFadeIn interSectionOptions={{ threshold: 0 }}>
+              {ndaMention.text}
+            </TextAnimationFadeIn>
+          </p>
+        </div>
+        <Divider />
       </section>
       <section className="mt-12 mb-40 content-section block sm:flex">
         <h2 className="mb-20 sm:mb-40 w-full: sm:w-1/2">
@@ -69,63 +84,6 @@ export default function Home() {
   );
 }
 
-const workItems: Omit<WorkItemProps, 'itemNumber'>[] = [
-  {
-    title: 'Cannify  Clinics',
-    description:
-      'I was hired to develop the frontend for Cannify Clinics - A platform for connecting medicinal cannabis patients with doctors. The task included involved create marketing pages, a customer portal and a support portal.',
-    image: {
-      alt: 'cannify clinics website',
-      src: cannifyClinicsImage,
-    },
-    video: {
-      backgroundColor: '#E8542F',
-      src: '/videos/cannifyclinics.mp4',
-      aspectWidth: 1654,
-      aspectHeight: 1228,
-    },
-  },
-  {
-    title: 'Soundboks',
-    description:
-      'I worked as frontent developer between 2020 and 2021 on the amazing digital team at SOUNDBOKS. My main responsibilities included the webshop and on the mobile app.',
-    image: {
-      alt: 'soundboks website',
-      src: soundboksImage,
-    },
-    video: {
-      backgroundColor: '#E8542F',
-      src: '/videos/soundboks-ultra.mp4',
-      aspectWidth: 1654,
-      aspectHeight: 1228,
-    },
-  },
-  {
-    title: 'Jonas Elsgaard',
-    description:
-      'Website implementation, design and headless CMS for the talented animator Jonas Elsgaard.',
-    image: {
-      alt: "jonas elsgaard's website",
-      src: jonasElsgaardImage,
-    },
-    video: {
-      src: '/videos/jonaselsgaard.mp4',
-      aspectHeight: 1114,
-      aspectWidth: 1644,
-      backgroundColor: '#EFEEEF',
-    },
-  },
-  {
-    title: 'RakatX',
-    description:
-      'Fullstack development on a webapp used in the online tendering process for managing contracts.',
-    image: {
-      alt: 'rakatx web app',
-      src: rakatXImage,
-    },
-  },
-];
-
 type ServiceType = {
   title: string;
   description: string;
@@ -133,23 +91,23 @@ type ServiceType = {
 
 const services: ServiceType[] = [
   {
-    title: 'Website development',
+    title: 'App modernization',
     description:
-      'I care deeply about performace and best practices regarding SEO & accessibility and - both users and search engines are gonna love your website',
+      'I get dropped into large, existing codebases to redesign and modernize them — improving the UX, performance and architecture without stopping the product.',
   },
   {
-    title: 'App development',
+    title: 'Product development',
     description:
-      'I leverage modern technologies like React-Native to develop cross platform apps that work on Android and iOS',
+      'From idea to shipped product: fullstack development with the testing, tooling and deployment setup that keeps it maintainable as it grows.',
   },
   {
-    title: 'CMS',
+    title: 'Design systems',
     description:
-      'I have extensive experience with various Content Management Systems and will gladly help you find the best fit for you and the project.',
+      'Component libraries and design systems that scale across web and native, so teams ship consistent UI faster instead of building everything twice.',
   },
   {
-    title: 'Automated testing',
+    title: 'CMS & content platforms',
     description:
-      'Testing the application helps guarantee that things keep working as intented and gives confidence when the application grows and changes are needed',
+      'I help teams pick the right CMS and integrate it so editors create pages and manage content without needing a developer in the loop.',
   },
 ];

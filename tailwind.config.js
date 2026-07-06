@@ -14,9 +14,9 @@ module.exports = {
         DEFAULT: '#000',
       },
       primary: {
-        DEFAULT: '#0065D4',
+        DEFAULT: '#5D7CCC',
       },
-      secondary: { DEFAULT: '#0065D4' },
+      secondary: { DEFAULT: '#5D7CCC' },
     },
     fontSize: {
       'huge-max': '4.5rem',

@@ -12,8 +12,8 @@ export function Layout({ children }: LayoutProps) {
     <>
       <DeveloperBadge />
       <header className="">
-        <div className="flex h-24 justify-between items-center fixed z-10 inset-x-0 content-section max-w-[1355px] mx-auto min-[1900px]:max-w-none mix-blend-difference text-white">
-          <div className="flex justify-between items-center flex-1">
+        <div className="flex h-24 justify-between items-center fixed z-10 inset-x-0 content-section max-w-[1355px] mx-auto min-[1900px]:max-w-none">
+          <div className="flex justify-between items-center flex-1 mix-blend-difference text-white">
             <Link passHref href="/">
               <a className="text-sm font-medium">
                 <span className="hidden tiny:block">
@@ -57,7 +57,11 @@ export function Layout({ children }: LayoutProps) {
             <div style={{ width: 'fit-content' }}>
               <h3 className="text-tiny font-normal mb-4">Contact</h3>
               <ul className="text-tiny">
-                <li>jonathan.sparvath@gmail.com</li>
+                <li>
+                  <a href="mailto:jonathan.sparvath@gmail.com">
+                    jonathan.sparvath@gmail.com
+                  </a>
+                </li>
                 <li>+45 81 75 53 45</li>
                 <li>Based in Copenhagen, Denmark</li>
               </ul>

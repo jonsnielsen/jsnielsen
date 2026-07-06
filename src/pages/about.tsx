@@ -4,6 +4,7 @@ import {
   WorkExperienceTable,
   WorkExperienceTableProps,
 } from '../components/WorkExperienceTable';
+import { TechChips } from '../components/TechChips';
 import cvData from '../../cv-data.json';
 
 import styles from './about.module.css';
@@ -51,7 +52,7 @@ export default function About() {
             </h1>
             <br />
             <p className="text-lg">
-              Contact me for any enquires or just say hello:{' '}
+              Contact me for any enquiries or just say hello:{' '}
               {cvData.profile.email}
             </p>
           </div>
@@ -62,9 +63,13 @@ export default function About() {
           <Divider className="mb-7" />
           <div className="flex mb-24 items-start justify-between">
             <h2 className="relative -top-1">Work Experience &#8595;</h2>
-            <button className="button-lg hidden sm:block sm:relative sm:bottom-0 sm:top-3">
+            <a
+              className="button-lg hidden sm:block sm:relative sm:bottom-0 sm:top-3"
+              href="/cv-jonathan-nielsen.pdf"
+              download
+            >
               Download full CV &#8595;
-            </button>
+            </a>
           </div>
           <WorkExperienceTable
             className="max-w-7xl mx-auto mb-20"
@@ -85,16 +90,15 @@ export default function About() {
         </h2>
         <div className={`${styles['tech-section-title']} mb-40`}>
           <p className="text-lg">
-            I specialize in modern technologie to ensure fast and reliable
+            I specialize in modern technologies to ensure fast and reliable
             results.
           </p>
           <br />
-          <p className="text-lg">
-            {cvData.globalSkills
-              .flatMap((skillCategory) => skillCategory.technologies)
-              .join(', ')}
-            .
-          </p>
+          <TechChips
+            technologies={cvData.globalSkills.flatMap(
+              (skillCategory) => skillCategory.technologies,
+            )}
+          />
         </div>
         <Divider />
       </section>
