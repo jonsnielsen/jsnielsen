@@ -26,6 +26,8 @@ export type CaseStudy = {
 	image: {
 		src: string;
 		alt: string;
+		aspectWidth: number;
+		aspectHeight: number;
 	};
 	video?: VideoProps;
 };

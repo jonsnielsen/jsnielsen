@@ -10,7 +10,7 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	let { study, studyIndex, nextStudy } = $derived(data);
+	let { study, studyIndex, previousStudy, nextStudy } = $derived(data);
 </script>
 
 <Layout>
@@ -47,7 +47,18 @@
 		<div class="relative mx-auto max-w-5xl overflow-hidden">
 			<MediaCover />
 			{#if !study.video}
-				<img src={study.image.src} alt={study.image.alt} loading="lazy" />
+				<div
+					style="position: relative; padding-bottom: {(study.image.aspectHeight /
+						study.image.aspectWidth) *
+						100}%;"
+				>
+					<img
+						src={study.image.src}
+						alt={study.image.alt}
+						loading="lazy"
+						class="absolute left-0 top-0 h-full w-full object-cover"
+					/>
+				</div>
 			{:else}
 				<Video
 					src={study.video.src}
@@ -99,10 +110,21 @@
 	<section class="content-section mb-32">
 		<Divider class="mb-7" />
 		<div class="flex items-baseline justify-between">
-			<a href={resolve('/')} class="text-sm font-medium">&#8592; All work</a>
-			<a href={resolve('/work/[slug]', { slug: nextStudy.slug })} class="text-sm font-medium">
-				Next: {nextStudy.title} &#8594;
-			</a>
+			{#if previousStudy}
+				<a
+					href={resolve('/work/[slug]', { slug: previousStudy.slug })}
+					class="text-sm font-medium"
+				>
+					&#8592; Previous: {previousStudy.title}
+				</a>
+			{:else}
+				<span></span>
+			{/if}
+			{#if nextStudy}
+				<a href={resolve('/work/[slug]', { slug: nextStudy.slug })} class="text-sm font-medium">
+					Next: {nextStudy.title} &#8594;
+				</a>
+			{/if}
 		</div>
 	</section>
 </Layout>

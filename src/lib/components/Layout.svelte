@@ -10,7 +10,7 @@
 <DeveloperBadge />
 <header>
 	<div
-		class="content-section fixed inset-x-0 z-10 mx-auto flex h-24 max-w-[1355px] items-center justify-between min-[1900px]:max-w-none"
+		class="content-section fixed inset-x-0 z-10 mix-blend-difference text-white mx-auto flex h-24 max-w-[1355px] items-center justify-between min-[1900px]:max-w-none"
 	>
 		<div class="mix-blend-difference flex flex-1 items-center justify-between text-white">
 			<a href={resolve('/')} class="text-sm font-medium">

@@ -2,6 +2,13 @@
 	import type { VideoProps } from '$lib/types';
 
 	let { src, backgroundColor, aspectWidth, aspectHeight }: VideoProps = $props();
+
+	let videoEl: HTMLVideoElement | undefined = $state();
+
+	$effect(() => {
+		src;
+		videoEl?.load();
+	});
 </script>
 
 <div
@@ -10,6 +17,7 @@
 		100}%;"
 >
 	<video
+		bind:this={videoEl}
 		class="absolute left-0 top-0 h-full w-full object-cover"
 		muted
 		playsinline

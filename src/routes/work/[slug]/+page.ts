@@ -9,7 +9,8 @@ export const load: PageLoad = ({ params }) => {
 	if (!study) error(404, 'Case study not found');
 
 	const studyIndex = caseStudies.findIndex((s) => s.slug === params.slug);
-	const nextStudy = caseStudies[(studyIndex + 1) % caseStudies.length];
+	const previousStudy = studyIndex > 0 ? caseStudies[studyIndex - 1] : null;
+	const nextStudy = studyIndex < caseStudies.length - 1 ? caseStudies[studyIndex + 1] : null;
 
-	return { study, studyIndex, nextStudy };
+	return { study, studyIndex, previousStudy, nextStudy };
 };
