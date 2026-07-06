@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <section className="mt-40 xl:mt-90 mb-80 content-section">
+      <section className="mt-40 xl:mt-60 mb-80 content-section">
         <h1 style={{ maxWidth: '1300px' }}>
           Frontend-leaning fullstack developer based in Copenhagen building
           immersive digital experiences.

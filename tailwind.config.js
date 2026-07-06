@@ -19,7 +19,7 @@ module.exports = {
       secondary: { DEFAULT: '#0065D4' },
     },
     fontSize: {
-      'huge-max': '5.5rem',
+      'huge-max': '4.5rem',
       'huge-min': '2.3rem',
 
       tiny: '1rem',

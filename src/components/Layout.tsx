@@ -12,28 +12,31 @@ export function Layout({ children }: LayoutProps) {
     <>
       <DeveloperBadge />
       <header className="">
-        <div className="flex h-24 justify-between items-center fixed w-full z-10 content-section pr-42 tiny:pr-48 sm:pr-46 md:pr-60 text-white mix-blend-difference">
-          <Link passHref href="/">
-            <a className="text-sm font-medium">
-              <span className="hidden tiny:block">
-                Jonathan <br className="block sm:hidden" />
-                S. Nielsen
-              </span>
-            </a>
-          </Link>
-          <nav className="-mr-1 md:-mr-0">
-            <ul className="flex gap-8">
-              <li className="text-sm font-medium">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="text-sm font-medium">
-                <Link href="/about">About</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="fixed flex items-center h-24 z-10 top-0 right-0  content-section">
-          <a className="mt-1 button" href="mailto:jonathan.sparvath@gmail.com">
+        <div className="flex h-24 justify-between items-center fixed z-10 inset-x-0 content-section max-w-[1355px] mx-auto min-[1900px]:max-w-none mix-blend-difference text-white">
+          <div className="flex justify-between items-center flex-1">
+            <Link passHref href="/">
+              <a className="text-sm font-medium">
+                <span className="hidden tiny:block">
+                  Jonathan <br className="block sm:hidden" />
+                  S. Nielsen
+                </span>
+              </a>
+            </Link>
+            <nav className="-mr-1 md:-mr-0">
+              <ul className="flex gap-8">
+                <li className="text-sm font-medium">
+                  <Link href="/">Home</Link>
+                </li>
+                <li className="text-sm font-medium">
+                  <Link href="/about">About</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <a
+            className="mt-1 button ml-8"
+            href="mailto:jonathan.sparvath@gmail.com"
+          >
             Write me
           </a>
         </div>
