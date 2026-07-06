@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { caseStudies, getCaseStudy } from '$lib/data/caseStudies';
+import { caseStudies, getCaseStudy } from '$lib/data';
 import type { PageLoad } from './$types';
 
 export const entries = () => caseStudies.map((study) => ({ slug: study.slug }));
