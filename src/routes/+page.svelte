@@ -16,12 +16,12 @@
 		{
 			title: 'Product development',
 			description:
-				'From idea to shipped product: fullstack development with the testing, tooling and deployment setup that keeps it maintainable as it grows.'
+				'Fullstack development of complex web applications - built with the architecture, testing and tooling that keep them maintainable as they grow.'
 		},
 		{
 			title: 'Design systems',
 			description:
-				'Component libraries and design systems that scale across web and native — one implementation of every component, consistent UI everywhere.'
+				'Component libraries and design systems that scale across web and native - one implementation of every component, consistent UI everywhere.'
 		},
 		{
 			title: 'CMS & content platforms',
@@ -31,7 +31,7 @@
 		{
 			title: 'Automated testing',
 			description:
-				'Unit and end-to-end test suites that catch regressions before users do — making every release safe to ship and every refactor safe to make.'
+				'Unit and end-to-end test suites that catch regressions before they reach production - so the codebase can keep evolving without things quietly breaking.'
 		}
 	];
 </script>

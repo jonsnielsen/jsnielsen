@@ -8,7 +8,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'kilnspace',
     title: 'Kilnspace',
-    tagline: 'A full-stack product for ceramicists — designed, built, tested and shipped solo.',
+    tagline: 'A full-stack product for ceramicists - designed, built, tested and shipped solo.',
     meta: {
       client: 'Own product',
       role: 'Design, fullstack development, everything',
@@ -32,7 +32,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'How it was built',
         paragraphs: [
-          'The interesting part is the workflow. Kilnspace is built spec-first with an agentic development setup around Claude Code: features are written as specifications, implemented by agents, and gated by Playwright end-to-end tests and Jest unit tests before anything lands. That discipline is what lets one person ship and maintain a real product at the speed of a small team — without the quality dropping.'
+          'The interesting part is the workflow. Kilnspace is built spec-first with an agentic development setup around Claude Code: features are written as specifications, implemented by agents, and gated by Playwright end-to-end tests and Jest unit tests before anything lands. That discipline is what lets one person ship and maintain a real product at the speed of a small team - without the quality dropping.'
         ]
       },
     ],
@@ -68,7 +68,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Problem',
         paragraphs: [
-          'SOUNDBOKS — the Danish speaker brand — runs a website, a blog, a webshop and a mobile app. Each surface needed consistent branded UI, but separate codebases meant every component was built and maintained twice.'
+          'SOUNDBOKS - the Danish speaker brand - runs a website, a blog, a webshop and a mobile app. Each surface needed consistent branded UI, but separate codebases meant every component was built and maintained twice.'
         ]
       },
       {
@@ -126,7 +126,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Problem',
         paragraphs: [
-          'Canify Clinics needed a digital platform for medicinal cannabis patients and doctors: a public marketing site, a customer universe for patients, and a support dashboard for staff — all serving multiple languages and markets.'
+          'Canify Clinics needed a digital platform for medicinal cannabis patients and doctors: a public marketing site, a customer universe for patients, and a support dashboard for staff - all serving multiple languages and markets.'
         ]
       },
       {
@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Key decisions',
         paragraphs: [
-          'I set up Sanity as a structured-content CMS so the client could edit sections, compose pages from building blocks and create entirely new pages — in every supported language — without developer involvement.',
+          'I set up Sanity as a structured-content CMS so the client could edit sections, compose pages from building blocks and create entirely new pages - in every supported language - without developer involvement.',
           'The public site is built with Next.js for prerendered, fast-loading pages, with Lingui handling internationalization throughout the platform.'
         ]
       },
@@ -182,7 +182,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Problem',
         paragraphs: [
-          'Mercell provides a large ecosystem for buyers and suppliers to run the tendering process online. RakatX, their contract management platform, needed continued development and maintenance — new features in a production system that businesses depend on.'
+          'Mercell provides a large ecosystem for buyers and suppliers to run the tendering process online. RakatX, their contract management platform, needed continued development and maintenance - new features in a production system that businesses depend on.'
         ]
       },
       {
@@ -225,5 +225,5 @@ export function getCaseStudy(slug: string): CaseStudy | undefined {
 export const ndaMention = {
   title: 'Frankly',
   period: '2025',
-  text: 'Most recently I redesigned and modernized a large legacy engineering application for Frankly — rethinking the UX and rebuilding the frontend on a modern React architecture (Vite, Tanstack Query, Zustand, Turborepo, gRPC). The work is under NDA, but I’m happy to talk through it.'
+  text: 'Most recently I redesigned and modernized a large legacy engineering application for Frankly - rethinking the UX and rebuilding the frontend on a modern React architecture (Vite, Tanstack Query, Zustand, Turborepo, gRPC). The work is under NDA, but I’m happy to talk through it.'
 };

@@ -53,7 +53,7 @@
 				<h1 class="text-lg font-normal">
 					Hi! I'm Jonathan Nielsen, a freelance fullstack developer with 7+ years of professional
 					experience building modern websites, scalable web applications, CMS platforms, and design
-					systems — both independently and as part of larger development teams.
+					systems - both independently and as part of larger development teams.
 				</h1>
 				<br />
 				<p class="text-lg">
